@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.MainActivity"
+    android:orientation="vertical">
+
+
+        <LinearLayout
+            android:id="@+id/regist_activity_L1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/regist_activity_textview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="账户:"
+                android:textSize="20sp"
+                android:layout_weight="1"/>
+            <EditText
+                android:id="@+id/regist_activity_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="19"
+                android:hint="请输入要注册账户"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/regist_activity_L2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/regist_activity_L1">
+            <TextView
+                android:id="@+id/regist_activity_textview2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/regist_activity_textview"
+                android:text="密码:"
+                android:textSize="20sp"
+                android:layout_weight="1"/>
+            <EditText
+                android:id="@+id/regist_activity_password"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="19"
+                android:hint="请输入要注册密码"
+                android:password="true"/>
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/regist_activity_L3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/regist_activity_L2">
+            <Button
+                android:id="@+id/regist_activity_back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="返回登陆"
+                android:textSize="20sp"
+                android:layout_gravity="center"
+                android:layout_weight="1"/>
+
+            <Button
+                android:id="@+id/regist_activity_commit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/regist_activity_textview"
+                android:text="注册提交"
+                android:textSize="20sp"
+                android:layout_gravity="center"
+                android:layout_weight="1"/>
+        </LinearLayout>
+
+
+
+
+</LinearLayout>

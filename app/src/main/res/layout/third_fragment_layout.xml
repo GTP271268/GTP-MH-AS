@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/third_fragment_textview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="页面3"
+        android:textSize="50sp" />
+
+    <Button
+        android:id="@+id/third_fragment_paybtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="支付测试"
+        android:layout_below="@id/third_fragment_textview"/>
+    <Button
+        android:id="@+id/third_fragment_saobtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="二维码相关"
+        android:layout_below="@id/third_fragment_paybtn"/>
+
+</RelativeLayout>

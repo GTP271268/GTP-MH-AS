@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!--<item-->
+        <!--android:id="@+id/navigation_home"-->
+        <!--android:icon="@drawable/ic_home_black_24dp"-->
+        <!--android:title="@string/title_home"/>-->
+
+    <!--<item-->
+        <!--android:id="@+id/navigation_dashboard"-->
+        <!--android:icon="@drawable/ic_dashboard_black_24dp"-->
+        <!--android:title="@string/title_dashboard"/>-->
+
+    <!--<item-->
+        <!--android:id="@+id/navigation_notifications"-->
+        <!--android:icon="@drawable/ic_notifications_black_24dp"-->
+        <!--android:title="@string/title_notifications"/>-->
+
+    <item
+        android:id="@+id/school"
+        android:title="学校">
+        <menu>
+            <item
+                android:id="@+id/njdx"
+                android:title="南京大学"></item>
+            <item
+                android:id="@+id/whdx"
+                android:title="武汉大学"></item>
+        </menu>
+    </item>
+    <item
+        android:id="@+id/college"
+        android:title="院系">
+        <menu>
+            <item
+                android:id="@+id/art"
+                android:title="艺术学院"></item>
+            <item
+                android:id="@+id/english"
+                android:title="英语学院"></item>
+        </menu>
+    </item>
+
+</menu>

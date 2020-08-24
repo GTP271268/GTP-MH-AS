@@ -1,0 +1,55 @@
+<resources>
+    <string name="app_name">微历史</string>
+    <string name="title_home">首页</string>
+    <string name="title_dashboard">分类</string>
+    <string name="title_notifications">我的</string>
+    //zxing
+    <string name="qr_code_text">二维码</string>
+    <string name="scan_qr_code_warn">将二维码放入框内，即可自动扫描</string>
+    <string name="scan_qr_code_from_photo_wrong">没有找到二维码</string>
+    <string name="album_text">相册</string>
+
+    <string name="identify_qr">识别二维码</string>
+    <string name="cancel">取消</string>
+    <string name="save_pic">保存图片</string>
+
+    <string name="fancy_qr_code_theme_name_yellow">黄</string>
+    <string name="fancy_qr_code_theme_name_green">绿</string>
+    <string name="fancy_qr_code_theme_name_red">红</string>
+    <string name="fancy_qr_code_theme_name_blue">蓝</string>
+    <string name="fancy_qr_code_theme_name_purple">紫</string>
+    <string name="fancy_qr_code_theme_name_black">黑</string>
+    //支付宝
+    <string name="demo_info_text">警告：出于演示目的，请求参数的组装和签名在客户端完成。但是，实际上，组装和签名都必须在服务器端进行.</string>
+    <string name="pay_with_alipay">Pay with Alipay</string>
+    <string name="pay_with_alipay_hk">Pay with AlipayHK</string>
+    <string name="auth_with_alipay">Authenticate with Alipay</string>
+    <string name="web_to_native">Call Alipay from Web Content</string>
+    <string name="check_sdk_version">Alipay SDK Version</string>
+    <string name="pay_success">Payment success:</string>
+    <string name="auth_failed">Authentication failed:</string>
+    <string name="error_missing_appid_rsa_private">Error: Missing \"APPID\" or \"RSA_PRIVATE\" in PayDemoActivity.</string>
+    <string name="error_missing_hk_partner_seller_rsa_private">Error: Missing \"PARTNER\", \"SELLER\", or \"RSA_PRIVATE\\ in OrderUtils1_0_HK.</string>
+    <string name="pay_result">Payment result:</string>
+    <string name="error_auth_missing_partner_appid_rsa_private_target_id">Error: Missing \"PARTNER\", \"APP_ID\", \"RSA_PRIVATE\", or \"TARGET_ID\" in PayDemoActivity.</string>
+    <string name="confirm">Confirm</string>
+    <string name="pay_failed">Payment failed:</string>
+    <string name="auth_success">Authentication success:</string>
+    <string name="alipay_sdk_version_is">"Alipay SDK version: "</string>
+    <string name="error_missing_h5_pay_url">Missing URL to load. Please configure in PayDemoActivity.h5Pay()</string>
+    <string name="error">Error</string>
+    <string name="pay_cross_border">Cross-border Pay with Alipay</string>
+    <string name="error_missing_global_partner_seller_rsa_private" >Error: Missing \"PARTNER\", \"SELLER\", or \"RSA_PRIVATE\\ in OrderUtils1_0_Global.</string>
+    <string name="payment_inst_hk">Payer: HK</string>
+    <string name="payment_inst_cn">Payer: CN</string>
+    //登录
+    <!--~~~~~~~~~~~~~~~~~~登录~~~~~~~~~~~~~~~~~~~-->
+    <string name="login_btn_text">Sign In</string>
+    <string name="login_text_hint_username">请输入用户名（Please enter the username）</string>
+    <string name="login_text_hint_password">请输入密码（Please input a password）</string>
+
+    <!-- ProgressDialog-->
+    <string name="progress_dialog_title">Progress Dialog</string>
+    <string name="progress_please_wait">Please wait…</string>
+
+</resources>
