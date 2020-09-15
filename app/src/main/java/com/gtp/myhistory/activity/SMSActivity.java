@@ -65,6 +65,7 @@ public class SMSActivity extends AppCompatActivity implements OnClickListener{
     protected void onDestroy() {
         super.onDestroy();
         SMSSDK.unregisterEventHandler(eventHandler);
+        finish();
     }
 
     /**

@@ -2,8 +2,15 @@ package com.gtp.myhistory.fragment;
 
 
 import android.app.Fragment;
+import android.content.ContentResolver;
+import android.content.ContentValues;
+import android.content.Context;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
+import android.os.Environment;
+import android.os.Parcelable;
+import android.provider.MediaStore;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,6 +24,10 @@ import com.gtp.myhistory.activity.PayDemoActivity;
 import com.gtp.myhistory.activity.SMSActivity;
 import com.gtp.myhistory.activity.ZxingActivity;
 
+import java.io.File;
+import java.util.ArrayList;
+import java.util.Date;
+
 /**
  * @author Gtp
  * @description:
@@ -28,6 +39,7 @@ public class ThirdFragment extends Fragment {
     private Button payBtn;
     private Button saoBtn;
     private Button smsBtn;
+    private Button shareBtn;
 
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -51,6 +63,7 @@ public class ThirdFragment extends Fragment {
         payBtn = view.findViewById(R.id.third_fragment_paybtn);
         saoBtn = view.findViewById(R.id.third_fragment_saobtn);
         smsBtn = view.findViewById(R.id.third_fragment_smsbtn);
+        shareBtn = view.findViewById(R.id.third_fragment_sharebtn);
 
         payBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -79,7 +92,51 @@ public class ThirdFragment extends Fragment {
             }
         });
 
+        shareBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(Intent.ACTION_SEND_MULTIPLE);
+                intent.setType("image/*");
+                intent.putParcelableArrayListExtra(Intent.EXTRA_STREAM, getUriListForImages());
+                intent.putExtra(Intent.EXTRA_SUBJECT, "分享");
+                intent.putExtra(Intent.EXTRA_TEXT, "你好 ");
+                intent.putExtra(Intent.EXTRA_TITLE, "我是标题");
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                startActivity(Intent.createChooser(intent, "请选择"));
+
+            }
+        });
+
     }
 
+    /**
+     * 设置需要分享的照片放入Uri类型的集合里
+     */
+    private ArrayList<Uri> getUriListForImages() {
+        ArrayList<Uri> myList = new ArrayList<Uri>();
+        String imageDirectoryPath = Environment.getExternalStorageDirectory().getAbsolutePath();
+        File imageDirectory = new File(imageDirectoryPath);
+        String[] fileList = imageDirectory.list();
+        if(fileList.length != 0) {
+            for(int i=0; i<5; i++){
+                try{
+                    ContentValues values = new ContentValues(7);
+                    values.put(MediaStore.Images.Media.TITLE, fileList[i]);
+                    values.put(MediaStore.Images.Media.DISPLAY_NAME, fileList[i]);
+                    values.put(MediaStore.Images.Media.DATE_TAKEN, new Date().getTime());
+                    values.put(MediaStore.Images.Media.MIME_TYPE, "image/jpeg");
+                    values.put(MediaStore.Images.ImageColumns.BUCKET_ID, imageDirectoryPath.hashCode());
+                    values.put(MediaStore.Images.ImageColumns.BUCKET_DISPLAY_NAME, fileList[i]);
+                    values.put("_data", imageDirectoryPath + fileList[i]);
+                    ContentResolver contentResolver = view.getContext().getContentResolver();
+                    Uri uri = contentResolver.insert(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, values);
+                    myList.add(uri);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+        return myList;
+    }
 
 }
