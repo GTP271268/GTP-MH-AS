@@ -24,6 +24,7 @@
         <activity android:name=".activity.H5PayDemoActivity" />
         <activity android:name=".activity.ZxingActivity" />
         <activity android:name=".activity.ScanActivity" />
+        <activity android:name=".activity.SMSActivity" />
 
     </application>
 

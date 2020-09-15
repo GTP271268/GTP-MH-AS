@@ -14,6 +14,7 @@ import com.alipay.sdk.app.PayTask;
 
 import com.gtp.myhistory.R;
 import com.gtp.myhistory.activity.PayDemoActivity;
+import com.gtp.myhistory.activity.SMSActivity;
 import com.gtp.myhistory.activity.ZxingActivity;
 
 /**
@@ -26,6 +27,7 @@ public class ThirdFragment extends Fragment {
     private View view;
     private Button payBtn;
     private Button saoBtn;
+    private Button smsBtn;
 
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -48,6 +50,7 @@ public class ThirdFragment extends Fragment {
         Toast.makeText(getActivity(), "支付版本：" + version, Toast.LENGTH_SHORT).show();
         payBtn = view.findViewById(R.id.third_fragment_paybtn);
         saoBtn = view.findViewById(R.id.third_fragment_saobtn);
+        smsBtn = view.findViewById(R.id.third_fragment_smsbtn);
 
         payBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -62,6 +65,15 @@ public class ThirdFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity(), ZxingActivity.class);
+                startActivity(intent);
+
+            }
+        });
+
+        smsBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), SMSActivity.class);
                 startActivity(intent);
 
             }
